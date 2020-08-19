@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+body{
+    background-color: #fafafa;
+    color: #656565;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 30px;
+    overflow: hidden;
+}
+a {
+    color: #47A1F7;
+    text-decoration: none;
+    background-color: transparent;
+}
+.line-height-13px {
+    line-height: 13px;
+}
+.mat-card {
+    background: white;
+    color: #656565;
+}
+button:focus{
+    outline: none !important;
+}
+mat-label:focus{
+    outline: none !important;
+}
+
+span:focus{
+    outline: none !important;
+}
+.wrapped-body{
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 90vh;
+}
+.height-7vh{
+    height: 7vh;
+}
+.color-black{
+    color: black;
+}
+.display-flex-end{
+    justify-content: flex-end;
+    display: flex;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.color-blue{
+    color: #800080;
+}
+.min-height-60vh{
+    min-height: 60vh;
+}
+.margin-bottom-0-5rem {
+    margin-top: 0.5rem !important;
+}

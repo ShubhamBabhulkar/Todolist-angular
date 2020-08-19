@@ -1,0 +1,15 @@
+<div class="col-md-12"> 
+    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+      
+        <mat-tab label="Todo list">
+            <span *ngFor="let news of myNews | slice:0:10">
+                <app-accordian-view [news]="news"></app-accordian-view>
+            </span>   
+        </mat-tab>
+
+    <mat-tab label="Add Todo">
+            <app-news-add></app-news-add>      
+        </mat-tab>
+    </mat-tab-group>
+
+</div>    

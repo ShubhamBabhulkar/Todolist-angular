@@ -1,0 +1,44 @@
+<div class="row wrapped-card justify-content-md-center align-items-center justify-content-center">
+    <div class="col-md-4 col-4">
+        <mat-card>
+          <div class="text-center wrapped-login-box">
+            <span class="login-text color-black">LOGIN TO CONTINUE</span> 
+            <form class="example-form" [formGroup]='Loginform' #f="ngForm" (ngSubmit)="userLogin(f.value)">
+              <mat-form-field class="example-full-width col-md-12">
+                  <input matInput formControlName="email" type="text" placeholder="Email">
+                  <mat-error *ngIf="getrequired('email').touched && getrequired('email').invalid">
+                  <mat-error *ngIf="getrequired('email').errors.required">Email required
+                  </mat-error>
+                  <mat-error *ngIf="getrequired('email').errors.email">
+                    Please enter a valid email address
+                  </mat-error>
+                </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width col-md-12">
+                  <input matInput
+                    formControlName="password"
+                    [type]="hide ? 'password' : 'text'"
+                    placeholder="Password"
+                    autocomplete="new-password"
+                  >
+                  <mat-icon matSuffix class="cursor-pointer" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  <mat-error *ngIf="getrequired('password').touched && getrequired('password').invalid"> 
+                    <mat-error *ngIf="getrequired('password').errors.required">Password required
+                    </mat-error>
+                    <mat-error *ngIf="getrequired('password').errors.minLength">Password should be 8 characters
+                    </mat-error>
+                  </mat-error>
+                  </mat-form-field>
+                  <div class="example-button-row">
+                    <button mat-raised-button  color="primary" class="width-100 cursor-pointer margin-top-05rem margin-bottom-05rem" [disabled]="!Loginform.valid">Login</button>
+                  </div>
+              </form>
+              <br>
+              <mat-label class="color-black">Don't have an account yet?</mat-label> 
+              <mat-label class="cursor-pointer color-blue" [routerLink]="['/register']" > Register now</mat-label> 
+              <mat-error *ngIf="errorMessage">{{errorMessage}}
+                </mat-error>
+                </div>
+        </mat-card>
+    </div>
+  </div>

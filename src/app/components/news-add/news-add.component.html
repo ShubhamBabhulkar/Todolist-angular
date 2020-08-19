@@ -1,0 +1,30 @@
+<div class="row wrapped-card justify-content-md-center align-items-center justify-content-center min-height-60vh">
+        <div class="col-md-10 col-10">
+            <div class="text-center wrapped-login-box">
+                <span class="login-text color-black">ADD Todo</span> 
+                <form class="example-form" [formGroup]='addTodoForm' #f="ngForm" (ngSubmit)="addTodo(f.value)">
+                <mat-form-field appearance="outline" class="example-full-width col-md-12">
+                    <mat-label>Enter todo Title</mat-label>
+                    <input matInput formControlName="title" type="text" placeholder="Todo Title">
+                    <mat-icon matSuffix>note</mat-icon>
+                    <mat-error *ngIf="getrequired('title').touched && getrequired('title').invalid">
+                    <mat-error *ngIf="getrequired('title').errors.required">Todo title required
+                    </mat-error>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="example-full-width col-md-12">
+                    <mat-label>Enter Todo Description</mat-label>
+                    <textarea matInput formControlName="description" type="text" matTextareaAutosize matAutosizeMinRows=5 matAutosizeMaxRows=20 placeholder="Todo Description"></textarea>
+                    <mat-icon matSuffix>note</mat-icon>
+                    <mat-error *ngIf="getrequired('description').touched && getrequired('description').invalid">
+                    <mat-error *ngIf="getrequired('description').errors.required">Todo description required
+                    </mat-error>
+                    </mat-error>
+                </mat-form-field>
+                <div class="example-button-row">
+                    <button mat-raised-button  color="primary" class="width-100 cursor-pointer margin-top-05rem margin-bottom-05rem" [disabled]="!addTodoForm.valid" cdkFocusInitial>Add</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>

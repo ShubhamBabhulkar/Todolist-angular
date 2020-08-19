@@ -1,0 +1,24 @@
+<mat-accordion>
+    <mat-expansion-panel class="margin-bottom-0-5rem">
+        <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{news?.title}}
+        </mat-panel-title>
+        </mat-expansion-panel-header>
+        <span class="row">
+            <span class="col-md-10">
+                <mat-label class="color-gray">Todo posted on {{getPostedTime(news._id) | date}}</mat-label>
+            </span>
+            <span *ngIf="authService.currentUser()._id === news.user._id" class="col-md-2 display-flex-end">
+                <button mat-icon-button color="primary" matTooltip="Edit todo" matTooltipPosition="above" (click)="openEditDialog(news)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" matTooltip="Delete todo" matTooltipPosition="above" (click)="openDialog(news._id);">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </span>
+        </span>
+        <br>
+        <mat-label class="line-height1-5rem">{{news?.description}}</mat-label>
+    </mat-expansion-panel>
+</mat-accordion>
